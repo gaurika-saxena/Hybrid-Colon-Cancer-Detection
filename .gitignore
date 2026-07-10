@@ -4,3 +4,6 @@ __pycache__/
 .ipynb_checkpoints/
 *.py[cod]
 *.log
+# Ignore datasets
+data/raw/
+data/processed/
