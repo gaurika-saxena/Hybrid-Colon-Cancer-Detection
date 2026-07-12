@@ -32,3 +32,17 @@ for folder in class_folders:
         ax.set_yticks([])
     plt.tight_layout(rect=[0,0,1,0.95], pad=3)
     plt.show()
+total_images = 0
+for folder in class_folders:
+    total_images += len(list(folder.iterdir()))
+print(f"\nTotal images in dataset: {total_images}")
+print("\nInspecting a sample image...")
+sample_image = next(class_folders[0].iterdir())
+sample_image_obj = Image.open(sample_image)
+num_classes = len(class_folders)
+print("========== DATASET SUMMARY ==========")
+print(f"Classes         : {num_classes}")
+print(f"Total Images    : {total_images}")
+print(f"Image Size      : {sample_image_obj.size}")
+print(f"Image Format    : {sample_image_obj.format}")
+print(f"Image Mode      : {sample_image_obj.mode}")
